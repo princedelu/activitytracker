@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <listModule>
+		<module>
+			<name>fileListener</name>
+			<value>C:\DEV\data\tmp\</value>
+		</module>
+		<!--<module>
+			<name>broker</name>
+			<type>kafka</type>
+			<value>192.168.1.33:9092?zookeeperHost=192.168.1.33&#38;zookeeperPort=2181&#38;groupId={0}&#38;topic={1}</value>
+		</module>-->
+		<module>
+			<name>broker</name>
+			<type>activemq</type>
+			<value>activytracker.{0}</value>
+		</module>
+		<module>
+			<name>database</name>
+			<type>mongodb</type>
+			<value>mongodb://192.168.1.33:27017</value>
+		</module>
+	</listModule>
+    <listComponent>
+        <component>
+            <name>activemq</name>
+            <type>activemq</type>
+            <url>vm://localhost.activitytracker?marshal=false&#38;broker.persistent=false&#38;broker.useJmx=true</url>
+        </component>
+    </listComponent>
+    <listDefProcessus>
+        <defProcessus file="C:\DEV\data\activitytracker\processus\ddd_daa_1.2.xml"/>
+    </listDefProcessus>
+</config>

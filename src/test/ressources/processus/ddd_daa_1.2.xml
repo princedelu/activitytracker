@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<processus>
+	<packageName>ddd</packageName>
+	<name>daa</name>
+	<version>1.2</version>
+	<listStep>
+		<step>
+			<name>offreinit</name>
+			<listLink>
+				<link>
+					<eventName>initCredit</eventName>
+					<stepNameOrigine>BEGIN</stepNameOrigine>
+				</link>
+			</listLink>
+		</step>
+		<step>
+			<name>offrecree</name>
+			<listLink>
+				<link>
+					<eventName>souscriptionOffreCredit</eventName>
+					<stepNameOrigine>offreinit</stepNameOrigine>
+				</link>
+			</listLink>
+		</step>
+		<step>
+			<name>offrecree1</name>
+			<listLink>
+				<link>
+					<eventName>souscriptionOffreCredit</eventName>
+					<stepNameOrigine>offreinit</stepNameOrigine>
+				</link>
+			</listLink>
+		</step>
+		<step>
+			<name>offreRefuseInit</name>
+			<listLink>
+				<link>
+					<eventName>refusOffreCredit</eventName>
+					<stepNameOrigine>offrecree1</stepNameOrigine>
+				</link>
+				<link>
+					<eventName>refusOffreCredit</eventName>
+					<stepNameOrigine>offrecree</stepNameOrigine>
+				</link>
+			</listLink>
+		</step>
+	</listStep>
+</processus>
+

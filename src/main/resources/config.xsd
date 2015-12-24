@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="config">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="listModule"/>
+                <xs:element ref="listComponent"/>
+                <xs:element ref="listDefProcessus"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="listModule">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="module" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="module">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="type" type="xs:string" minOccurs="0"/>
+                <xs:element name="value" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="listComponent">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="component" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="component">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="type" type="componentType"/>
+                <xs:element name="url" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="listDefProcessus">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="defProcessus" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="defProcessus">
+        <xs:complexType>
+            <xs:attribute name="file" type="xs:string"/>
+        </xs:complexType> 
+    </xs:element>
+    <xs:simpleType name="componentType">
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="activemq"/>
+        <xs:enumeration value="mongodb"/>
+        <xs:enumeration value="kafka"/>
+      </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<processus>
+	<packageName>ddd</packageName>
+	<name>processus</name>
+	<version>1.1</version>
+	<listStep>
+		<step>
+			<name>offrecree</name>
+			<listLink>
+				<link>
+					<eventName>initCredit</eventName>
+					<stepNameOrigine>BEGIN</stepNameOrigine>
+				</link>
+			</listLink>
+		</step>
+		<step>
+			<name>offreRefuseInit</name>
+			<listLink>
+				<link>
+					<eventName>souscriptionOffreCredit1</eventName>
+					<stepNameOrigine>offrecree</stepNameOrigine>
+				</link>
+			</listLink>
+		</step>
+	</listStep>
+</processus>
